@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>semestre</title>
+  
+  <meta charset="utf-8">
+
+
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.13.1/datatables.min.css" />
+
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css"><!-- datatable-->
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script><!-- datatable-->
+  <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script><!-- datatable-->
+  <link href="{{url_for('static', filename = 'css/bootstrap.min.css')}}" rel="stylesheet">
+  <style>
+    table,
+    th,
+    td {
+      border: 1px solid black;
+    }
+
+    h5 {
+      background-color: #04AA6D;
+      border: none;
+      color: white;
+      padding: 6px 2px;
+      text-decoration: none;
+      margin: 4px 2px;
+      cursor: pointer;
+      width: 12%;
+    }
+
+    body {
+      background-color: #eff5f5;
+    }
+  </style>
+  <link href="static/img/favicon.ico" rel="icon">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <br>
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-12">
+        <span><a href="/homes" class="btn btn-primary">AJOUTER</a></span> <br>
+        <br>
+        <div class="table-responsive">
+
+          <table id="example" class="table table-striped table-bordered">
+            <thead>
+              <tr>
+                <th>Nom du semestre </th>
+
+
+
+
+                <td><b>Actions </b></td>
+              </tr>
+            </thead>
+            <tbody>
+              {% for row in emps %}
+              <tr>
+                <td>{{row.1}}</td>
+
+
+
+
+                <td align="center">
+                  <a href="/update_rec/{{row.0}}" class="btn btn-primary">Modifier</a>
+
+                  <a href="/delete/{{ row.0 }}" class="btn btn-danger btn-xs"
+                    onclick="return confirm('etes vs sur de supprimer ')">Supprimer</a>
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+          <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.22/datatables.min.js"></script>
+          <script type="text/javascript">
+            $(document).ready(function () {
+              $('#example').DataTable({
+                "paging": true
+              });
+            });
+          </script>
+          <a href="{{ url_for('homes') }}">
+            <h4>Retour </h4>
+          </a>
+          <script><!-- datatable-->
+            $(document).ready(function () {
+              $('#empTable').DataTable();
+            });
+          </script><!-- datatable-->
+
+
+
+          <!-- JavaScript Libraries -->
+          <!--        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>-->
+          <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+          <script src="static/lib/easing/easing.min.js"></script>
+          <script src="static/lib/owlcarousel/owl.carousel.min.js"></script>
+          <script src="static/lib/waypoints/waypoints.min.js"></script>
+          <script src="static/lib/counterup/counterup.min.js"></script>
+          <script src="static/lib/parallax/parallax.min.js"></script>
+
+          <!-- Contact Javascript File -->
+          <script src="static/mail/jqBootstrapValidation.min.js"></script>
+          <script src="static/mail/contact.js"></script>
+
+          <!-- Template Javascript -->
+          <script src="static/js2/main.js"></script>
+</body>
+
+</html>

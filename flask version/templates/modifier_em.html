@@ -1,0 +1,32 @@
+<!DOCTYPE html >
+<html >
+<head>
+<meta http-equiv="Content-type" content="text/html :charset=UTF-8"/>
+<title>Formulaire </title>
+
+</head>
+<body>
+<h2 >Modifier un EM</h2>
+ <form  action="{{ url_for('update') }}"   method="POST">
+
+<table border="0">
+
+<tr><td><label>code :</label></td><td><input type="number" name="code_EM"  value="{{emp[0]}} "required/> </td></tr>
+    
+<tr><td><label>Nom  :</label></td><td><input type="text" name="nom_EM"  value="{{emp[1]}}" required /></td></tr>
+<tr><td><label> coeff:</label></td><td><input type="number" name="coeff_EM" value="{{emp[2]}}" required  /></td></tr>
+<tr><td><label>credit: </label></td><td><input type="number" name="credit_EM"   value="{{emp[3]}}" required /></td></tr>
+<tr><td><label>V_CM :</label></td><td><input type="number" name="V_CM"  value="{{emp[4]}}" required /></td></tr>
+<tr><td><label> V_TD:</label></td><td><input type="number" name="V_TD"   value="{{emp[5]}}" required  /></td></tr>
+<tr><td><label>V_TP: </label></td><td><input type="number" name="V_TP"  value="{{emp[6]}}" required /></td></tr>
+<tr><td><label>V_PR: </label></td><td><input type="number" name="V_PR"  value="{{emp[7]}}" required /></td></tr>
+
+
+&nbsp;&nbsp;<input type="submit" value="Envoyer" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="reset" value="Effacer" />
+</form>
+<br>
+
+
+</body>
+</html>

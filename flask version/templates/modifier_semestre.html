@@ -1,0 +1,25 @@
+<!DOCTYPE html >
+<html >
+<head>
+<meta http-equiv="Content-type" content="text/html :charset=UTF-8"/>
+<title>Formulaire </title>
+
+</head>
+<body>
+<h2 >Modifier un semestre</h2>
+ <form  action="{{ url_for('update') }}"   method="POST">
+
+<table border="0">
+
+
+<tr><td><label>Nom  :</label></td><td><input type="text" name="nom_sem"  value="{{emp[0]}}" required /></td></tr>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="Envoyer" />
+&nbsp;&nbsp; <input type="reset" value="Effacer" />
+</form>
+<br>
+
+
+</body>
+</html>

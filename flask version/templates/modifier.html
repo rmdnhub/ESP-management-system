@@ -1,0 +1,32 @@
+<!DOCTYPE html >
+<html >
+<head>
+<meta http-equiv="Content-type" content="text/html :charset=UTF-8"/>
+<title>Formulaire </title>
+
+</head>
+<body>
+<h2 >Modifier un(e) enseignant(e)</h2>
+ <form  action="{{ url_for('update') }}"   method="POST">
+
+<table border="0">
+
+<table border="0">
+<tr><td><label>id :</label></td><td> <input type="number"   name="id"   maxlength="256" value="{{emp[0]}} "required/></td></tr>
+<tr><td><label>Nom_EM :</label></td><td><input type="text" name="nom_EM"  value="{{emp[1]}}" required /></td></tr>
+<tr><td><label>nom_E:</label></td><td><input type="text" name="nom_E" maxlength="256"  value="{{emp[2]}}" required  /></td></tr>
+<tr><td><label>prenom_E:</label></td><td><input type="text" name="nom_E" maxlength="256"  value="{{emp[3]}}" required  /></td></tr>
+<tr><td><label>plage</label></td><td><input type="text" name="nom_E" maxlength="256"  value="{{emp[4]}}" required  /></td></tr>
+<tr><td><label>type</label></td><td><input type="text" name="nom_E" maxlength="256"  value="{{emp[4]}}" required  /></td></tr>
+<tr><td><label>plage:</label></td><td><input type="text" name="nom_E" maxlength="256"  value="{{emp[2]}}" required/></td></tr>
+<tr><td><label>semestre:</label></td><td><input type="text" name="nom_E" maxlength="256"  value="{{emp[2]}}" required  /></td></tr>
+      
+&nbsp;&nbsp;<input type="submit" value="Envoyer" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="reset" value="Effacer" />
+</form>
+<br>
+
+
+</body>
+</html>
+

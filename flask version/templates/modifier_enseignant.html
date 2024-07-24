@@ -1,0 +1,31 @@
+<!DOCTYPE html >
+<html >
+<head>
+<meta http-equiv="Content-type" content="text/html :charset=UTF-8"/>
+<title>Formulaire </title>
+
+</head>
+<body>
+<h2 >Modifier un(e) enseignant(e)</h2>
+ <form  action="{{ url_for('update') }}"   method="POST">
+
+<table border="0">
+
+<table border="0">
+    <tr><td><label>Numero  :</label></td><td> <input type="number"   name="num_E"   maxlength="256" value="{{emp[0]}} "required/></td></tr>
+<tr><td><label>Nom  :</label></td><td><input type="text" name="nom_E"  value="{{emp[1]}}" required /></td></tr>
+<tr><td><label>prenom:</label></td><td><input type="text" name="prenom_E" maxlength="256"  value="{{emp[2]}}" required  /></td></tr>
+<tr><td><label>E-mail : </label></td><td><input type="email" name="e_mail_E"  maxlength="256" value="{{emp[3]}}" required /></td></tr>
+<tr><td><label>statut:</label></td><td>
+<label><input type="radio" name="statut_E" value="{{emp[4]}}" />Vacataire<br/> </label>
+<label> <input type="radio" name="statut_E" value="{{emp[4]}}" />Permanent<br /></label>
+
+&nbsp;&nbsp;<input type="submit" value="Envoyer" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="reset" value="Effacer" />
+</form>
+<br>
+
+
+</body>
+</html>
+

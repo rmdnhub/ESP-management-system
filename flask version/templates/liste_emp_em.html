@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Elements de module</title>
+  <meta charset="utf-8">
+
+
+  <script>$(document).ready(function () {
+      $('#example').DataTable();
+    });
+  </script>
+
+  <!-- JavaScript Libraries -->
+  <!--        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>-->
+
+  <!-- Template Javascript -->
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap4.min.js"></script>
+
+  <link href="{{url_for('static', filename = 'css/bootstrap.min.css')}}" rel="stylesheet">
+
+  <span><a href="/homeem" class="btn btn-primary">AJOUTER</a></span> <br>
+  <br>
+
+  <link href="static/img/favicon.ico" rel="icon">
+  <style>
+    td,
+    th {
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <br>
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-12">
+
+        <div class="table-responsive">
+          <table id="example" class="table table-striped">
+            <thead>
+              <tr>
+                <th>Code </th>
+                <th>Nom</th>
+                <th>Coefficient</th>
+                <th> CM</th>
+                <th> TD</th>
+                <th> TP</th>
+                
+
+
+
+                <td><b>Actions</b></td>
+
+              </tr>
+            </thead>
+            <tbody>
+              {% for row in empsem %}
+              <tr>
+                <td>{{row.0}}</td>
+                <td>{{row.1}}</td>
+                <td>{{row.2}}</td>
+                <td>{{row.3}}</td>
+                <td>{{row.4}}</td>
+                <td>{{row.5}}</td>
+                
+
+
+
+                <td align="center">
+                  <a href="/update_rec/{{row.0}}" class="btn btn-primary">Modifier</a>
+
+                  <a href="/delete/{{ row.0 }}" class="btn btn-danger btn-xs"
+                    onclick="return confirm('etes vs sur desupprimer')">Supprimer</a>
+
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+        <a href="{{ url_for('homeem') }}">
+          <h4>Retour </h4>
+        </a>
+        <!-- datatable-->
+
+        <script>$(document).ready(function () {
+            $('#example').DataTable();
+          });
+        </script>
+        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap4.min.js"></script>
+
+        <!-- JavaScript Libraries -->
+        <!--        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>-->
+
+</body>
+
+</html>
